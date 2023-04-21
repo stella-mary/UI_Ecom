@@ -6,6 +6,7 @@ import Sidebar from './scenes/global/Sidebar';
 import Cart from './scenes/cart';
 import Payment from './scenes/payment'
 import Bill from './scenes/bill'
+import Product from './scenes/product'
 
 // import Dashboard from './scenes/dashboard';
 // import Team from './scenes/team';
@@ -38,7 +39,7 @@ function App() {
               <Route path="cart" element={<Cart />} />
               <Route path="payment" element={<Payment />} />
               <Route path="bill" element={<Bill />} />
-
+              <Route path="product" element={<Product />} />
 
             </Routes>
           </main>
