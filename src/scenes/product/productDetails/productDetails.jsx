@@ -1,103 +1,82 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import React, { useState } from 'react';
-import { mockDataCart } from "../../../data/mockData";
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import DeleteIcon from '@mui/icons-material/Delete';
-import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
+import { Box, Typography } from "@mui/material";
+// import shoe from "path/to/shoe";
 import shoe from '../../Img/shoe.jpg'
-import { GifBoxSharp } from "@mui/icons-material";
-
-
-const BillAddress = () => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-
-
+export default function ProductDetails() {
     return (
-        // <Box m="20px">
-
-        < Box
-            border="solid 1px yellow"
-            display="grid"
-            gridTemplateColumns="1fr 3fr 3fr"
-            alignItems="center"
-            justifyContent="center"
-            borderRadius="10px"
-            padding="15px"
-            m="20px"
-            backgroundColor={colors.primary[400]}
+        <Box
+            sx={{
+                display: "flex",
+                width: "97%",
+                alignItems: "top",
+                // justifyContent: "space-between",
+                gap: "1%",
+                borderRadius: "10px",
+                padding: "1%",
+                m: "20px",
+                backgroundColor: "#222b36",
+                // border: "solid 1px yellow",
+            }}
         >
             <Box
-                display="flex"
-                border="solid 1px red"
-                flexDirection="column"
-                gap="10px"
-                width="50px"
-                height="100px"
-                objectFit="contain"
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                    width: "10%",
+                    // border: "solid 1px red",
+                }}
             >
-                <img src={shoe} alt="" ></img>
-                <img src={shoe} alt="" ></img>
-                <img src={shoe} alt="" ></img>
+                <img src={shoe} alt="Shoe 1" />
+                <img src={shoe} alt="Shoe 2" />
+                <img src={shoe} alt="Shoe 3" />
             </Box>
 
             <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                // width="50px"
-                // height="100px"
-                objectFit="contain"
-                border="solid 1px blue"
+                sx={{
+                    // border: "solid 1px red",
+                    width: "44%",
+                    display: "flex",
+                    alignItems: "center",
+                    objectFit: "cover",
+                }}
             >
-                <img src={shoe} alt="" width="300px"></img>
-                {/* <img src={shoe} alt="" ></img>
-                <img src={shoe} alt="" ></img> */}
+                <img src={shoe} alt="Shoe 4" width="100%" />
             </Box>
-            {/* 
+
             <Box
-                width="50px"
-                height="100px"
-                objectFit="contain"
-                border="solid 1px blue"
+                sx={{
+                    // border: "solid 1px green",
+                    width: "44%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "left",
+                    marginLeft: "10px",
+                    justifyContent: "center",
+                }}
+            >
+                <Typography><span class="bgcolor5">In Stock</span></Typography>
+                <Typography variant="h4" color="#7c91a6" marginTop="20px">NIKE</Typography>
+                <Typography variant="h2" marginTop="10px"><b>Air Jordan 270</b></Typography>
+                <Typography variant="h4" marginTop="5px" color="#2499ef">$350</Typography>
+                <Typography variant="h5" marginTop="20px">Colors:</Typography>
+                <Typography variant="h5" marginTop="20px">Select size:<span class="space" />
+                    <select>
+                        <option value="">40</option>
+                        <option value="">41</option>
+                        <option value="">42</option>
+                    </select>
+                </Typography>
+                <Typography variant="h5" marginTop="20px">Quantity:</Typography>
+                <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    marginTop="20px"
+                    width="50%"
                 >
-                <img src={shoe} alt="" ></img>
-            </Box> */}
-
-            {/* <Box
-                    component="img"
-                    alt='profile'
-                    src={shoe}
-                    height="40px"
-                    width="40px"
-                    borderRadius="50%"
-                    sx={{ objectFit: "cover" }}
-                /> */}
-
-            <Box
-
-                display="flex"
-                alignItems="center"
-                justifyContent="left"
-                border="solid 1px green"
-            >
-                In Stock<br />
-                NIKE<br />
-                AIR JORDAN 270<br />
-                $350 <br />
-                Colors:<br />
-                Select size:<br />
-                Quantity:<br />
-                Add to cart<br />
-                Buy Now<br />
+                    <Typography><span class="bgcolor6">Add to cart</span></Typography>
+                    <Typography><span class="bgcolor5">Buy Now</span></Typography>
+                </Box>
             </Box>
-
-
         </Box>
-
-
     );
-};
-
-export default BillAddress;
+}

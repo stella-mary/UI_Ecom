@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Dancing+Script:wght@700&family=Kanit:wght@200;300;500&family=Karla:ital,wght@0,200;0,400;1,300&family=Merriweather+Sans:wght@500&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300&family=Oleo+Script:wght@700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playball&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;1,100&family=Satisfy&family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;0,900;1,200&family=Work+Sans&display=swap');
+
 
 html,
 body,
@@ -7,7 +8,8 @@ body,
 .content {
   height: 100%;;
   width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  /* font-weight: bold; */
 }
 
 
@@ -55,6 +57,30 @@ body,
   color: #2499ee;
 }
 
+
+.bgcolor5 {
+  background-color: #27ce88;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.bgcolor6 {
+  background-color: #2499ef;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bgcolor6:hover{
+  background: #0c5d96;
+}
+
 .color{
   color: #455a79;
 }
@@ -62,6 +88,12 @@ body,
 
 .checkOut{
 margin-left: 20px;
+
+}
+
+.image1{
+  text-align: center;
+  margin-top: 20px;
 }
 
 .bordertop{
@@ -70,8 +102,18 @@ margin-left: 20px;
   margin-bottom: -5px;
 }
 
+.borderbottom{
+  border-bottom: solid 0.08px;
+  width: 40%;
+margin-left: 30%;  
+  margin-top: -2px;
+  margin-bottom: -5px;
+  text-align: center;
+}
+
 .image{
-  border-radius: 20px;
+  margin-top: 40px;
+  margin-right: 10px;
 }
 
 .space{
