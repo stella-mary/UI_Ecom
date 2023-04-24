@@ -54,11 +54,10 @@ const PaymentComplete2 = () => {
                     marginLeft="35%"
                     variant="h5"
                     fontWeight="600"
-                    width="25%"
+                    width="30%"
                     marginTop="15px"
                     paddingTop="10px"
                     textAlign="center"
-
                 >
                     <button className="button">Back to Order</button>
                 </Typography>

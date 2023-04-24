@@ -58,17 +58,17 @@ const OrderSummary = () => {
                             <Box
                                 marginLeft="-30%"
                             >
-                                <Typography variant="h3" fontWeight="100" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
+                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
                                     {item.ProductName}
                                 </Typography>
-                                <Typography variant="h3" fontWeight="100" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
+                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
                                     {item.ProductPrice}
                                 </Typography>
-                                <Typography variant="h3" fontWeight="300" fontSize="15px" color={colors.grey[500]} marginBottom="5px">
+                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[500]} marginBottom="5px">
                                     {item.ProductStock}
                                 </Typography>
                             </Box>
-                            <Typography variant="h3" fontWeight="300" fontSize="15px" color={colors.grey[100]} marginTop="10px">
+                            <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
                                 <button className="bgColor" onClick={() => increase(item.id)}>+</button>
                                 <span className="space" />
                                 {item.quantity}

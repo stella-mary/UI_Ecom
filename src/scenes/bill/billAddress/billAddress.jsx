@@ -14,10 +14,23 @@ const BillAddress = () => {
 
     return (
         <Box m="20px">
+
+
             <Box
                 gridColumn="span 8"
                 gridRow="span 2"
             >
+
+                <Typography
+                    variant="h6"
+                    fontWeight="600"
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    marginBottom="20px" color={colors.grey[100]} >
+                    Billing & Address
+                    <button className="button3">+ Add New Address</button>
+                </Typography>
                 < Box
                     display="flex"
                     justifyContent="space-between"

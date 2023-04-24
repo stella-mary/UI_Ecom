@@ -9,6 +9,10 @@ import RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
+import visa from '../../Img/visa.png'
+import Mastercard from '../../Img/Mastercard.png'
+import americanexpress from '../../Img/americanexpress.png'
+
 
 const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
     ({ theme, checked }) => ({
@@ -88,10 +92,18 @@ const PaymentMethod = () => {
                         {/* <li><i><span className="bgColor2">Pay</span><span className="bgColor3">Pal</span></i></li> */}
                     </Typography>
                     <p className="bordertop">&#160;</p>
-                    <RadioGroup name="use-radio-group" defaultValue="first">
-                        <MyFormControlLabel
-                            value="Credit or debit card" label="Credit or debit card" control={<Radio />} />
-                    </RadioGroup>
+                    <Box
+                        display="flex"
+                        flexDirection="row"
+                        justifyContent="space-between"
+                    >
+                        <RadioGroup name="use-radio-group" defaultValue="first">
+                            <MyFormControlLabel
+                                value="Credit or debit card" label="Credit or debit card" control={<Radio />} />
+                            <img src={visa} width="40" alt="" /><span className="space" /><img src={Mastercard} width="40" alt="" />
+                            <span className="space" /><img src={americanexpress} width="40" alt="" />
+                        </RadioGroup>
+                    </Box>
 
 
                     <Box
@@ -103,7 +115,17 @@ const PaymentMethod = () => {
                             color: '#283b82;',
                         }}
                     >
-                        <TextField fullWidth label="Card Number" id="Card Number" />
+                        <TextField
+                            fullWidth
+                            label="Card Number"
+                            id="Card Number"
+                            InputLabelProps={{ style: { color: '#2499ef' } }}
+                            InputProps={{
+                                style: {
+                                    borderColor: 'red', // Set the border color
+                                },
+                            }}
+                        />
                     </Box>
                     <Box
                         sx={{
@@ -115,9 +137,29 @@ const PaymentMethod = () => {
                             marginBottom: '20px'
                         }}
                     >
-                        <TextField fullWidth label="Exp Date" id="Exp Date" />
+                        <TextField
+                            fullWidth
+                            label="Exp Date"
+                            id="Exp Date"
+                            InputLabelProps={{ style: { color: '#2499ef' } }}
+                            InputProps={{
+                                style: {
+                                    borderColor: 'red', // Set the border color
+                                },
+                            }}
+                        />
 
-                        <TextField fullWidth label="CVC" id="CVC" />
+                        <TextField
+                            fullWidth
+                            label="CVC"
+                            id="CVC"
+                            InputLabelProps={{ style: { color: '#2499ef' } }}
+                            InputProps={{
+                                style: {
+                                    borderColor: 'red', // Set the border color
+                                },
+                            }}
+                        />
                     </Box>
                     <p className="bordertop">&#160;</p>
                     <RadioGroup name="use-radio-group" defaultValue="first">

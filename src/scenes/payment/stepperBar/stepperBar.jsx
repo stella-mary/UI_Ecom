@@ -15,7 +15,7 @@ export default function StepperBar() {
     return (
         <div>
             <div className="checkOut"><span className="bgColor4"><LocalMallOutlinedIcon /></span><span className="space" />Checkout</div>
-            < Box sx={{ width: '100%' }
+            < Box sx={{ width: '100%', marginTop: '25px' }
             }>
                 <Stepper activeStep={0} alternativeLabel>
                     {steps.map((label) => (

@@ -33,7 +33,7 @@ const OrderSummary = () => {
                     p="15px"
                 >
 
-                    <Typography color={colors.grey[100]} variant="h5" fontWeight="600" fontSize="20px">
+                    <Typography color={colors.grey[100]} variant="h5" fontWeight="600" fontSize="15px">
                         Order Summery
                     </Typography>
                 </Box>
@@ -47,13 +47,13 @@ const OrderSummary = () => {
                     p="15px"
                 >
                     <Box>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingBottom="20px">
+                        <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                             SubTotal
                         </Typography>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingBottom="20px">
+                        <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                             Discount
                         </Typography>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" font-Size="20px" paddingBottom="20px">
+                        <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
                             Shipping Cost
                         </Typography>
 
@@ -64,12 +64,12 @@ const OrderSummary = () => {
                             </Box> */}
                     <Box p="5px 10px" >
                         {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="20px" paddingBottom="20px">$215</Typography>
+                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
 
                         {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="20px" paddingBottom="20px">15%</Typography>
+                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
                         {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="20px" paddingBottom="20px">$50</Typography>
+                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$50</Typography>
                     </Box>
                 </Box>
 
@@ -78,17 +78,16 @@ const OrderSummary = () => {
                     display="flex"
                     justifyContent="space-between"
                     alignItems="center"
-
                     p="15px"
                 >
                     <Box>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontSize="25px" fontWeight="600" paddingBottom="20px">
+                        <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="1px">
                             Total
                         </Typography>
                     </Box>
                     <Box p="5px 10px" >
                         {/* ${transaction.cost} */}
-                        <Typography color="#2499ee;" fontWeight="600" fontSize="25px" paddingBottom="20px">$285</Typography>
+                        <Typography color="#2499ee;" fontWeight="600" fontSize="15px" paddingBottom="1px">$285</Typography>
                     </Box>
                 </Box>
 
@@ -101,7 +100,7 @@ const OrderSummary = () => {
                 >
 
 
-                    <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="20px" textAlign="center" paddingBottom="20px">
+                    <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="10px" textAlign="center" paddingBottom="20px">
                         <button className="button">Proceed to payment</button>
                     </Typography>
                 </Box>
