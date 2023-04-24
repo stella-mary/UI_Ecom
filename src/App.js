@@ -10,6 +10,8 @@ import Product from './scenes/product'
 import Shop1 from './scenes/shop1'
 import CheckOut2 from './scenes/checkOut2'
 import PaymentComplete1 from "./scenes/paymentComplete1";
+import PaymentComplete2 from "./scenes/paymentComplete2";
+
 
 // import Dashboard from './scenes/dashboard';
 // import Team from './scenes/team';
@@ -46,6 +48,7 @@ function App() {
               <Route path="shop1" element={<Shop1 />} />
               <Route path="checkout2" element={<CheckOut2 />} />
               <Route path="Complete1" element={<PaymentComplete1 />} />
+              <Route path="Complete2" element={<PaymentComplete2 />} />
 
             </Routes>
           </main>
