@@ -119,6 +119,25 @@ body,
   background: #0c5d96;
 }
 
+.bgColor7 {
+  color: #283b82;
+  font-style: italic;
+  font-size: 15px;
+}
+
+
+.bgColor8 {
+  color: #469bdb;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.bgColor9{
+  color: white;
+  
+  font-size: 15px;
+}
+
 .color{
   color: #455a79;
 }
@@ -152,6 +171,12 @@ margin-left: 30%;
 .image{
   margin-top: 10px;
   margin-right: 10px;
+}
+
+.image2{
+  /* margin-top: 0px;
+  margin-right: 10px; */
+  
 }
 
 .space{

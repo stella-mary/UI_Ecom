@@ -3,12 +3,40 @@ import { tokens } from "../../../theme";
 import React, { useState } from 'react';
 import { mockDataCart } from "../../../data/mockData";
 
-const OrderSummary = () => {
+const CartDetails = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
 
+
+    const displayButton = (id) => {
+        console.log("addbutton clicked")
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id ? { ...item, show: !item.show } : item
+            )
+        );
+    }
+
     const [cart, setCart] = useState(mockDataCart);
+
+    // const increase = (id) => {
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    //         )
+    //     );
+    // };
+
+    // const decrease = (id) => {
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id && item.quantity >= 1
+    //                 ? { ...item, quantity: item.quantity - 1 }
+    //                 : item
+    //         )
+    //     );
+    // };
 
     const increase = (id) => {
         setCart((prevCart) =>
@@ -21,12 +49,16 @@ const OrderSummary = () => {
     const decrease = (id) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
-                item.id === id && item.quantity > 1
-                    ? { ...item, quantity: item.quantity - 1 }
-                    : item
+                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+            )
+        );
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id && item.quantity === 1 ? { ...item, show: true } : item
             )
         );
     };
+
 
 
     return (
@@ -68,13 +100,20 @@ const OrderSummary = () => {
                                     {item.ProductStock}
                                 </Typography>
                             </Box>
-                            <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
-                                <button className="bgColor" onClick={() => increase(item.id)}>+</button>
-                                <span className="space" />
-                                {item.quantity}
-                                <span className="space" />
-                                <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
-                            </Typography>
+                            {item.quantity >= 1 && item.show ? (
+                                <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
+                                    <button className="bgColor" onClick={() => increase(item.id)}>+</button>
+                                    <span className="space" />
+                                    {item.quantity}
+                                    <span className="space" />
+                                    <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
+                                </Box>
+                            ) : (
+                                <Box>
+                                    <button onClick={() => displayButton(item.id)}>Add to cart</button>
+                                </Box>
+                            )}
+
                         </Box>
                     </div>
                 ))
@@ -88,4 +127,4 @@ const OrderSummary = () => {
     );
 };
 
-export default OrderSummary;
+export default CartDetails;

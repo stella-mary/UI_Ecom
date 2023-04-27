@@ -29,6 +29,7 @@ import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlin
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { Height } from '@mui/icons-material';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
@@ -51,12 +52,13 @@ const Sidebar = () => {
     return (
         <Box
             sx={{
+                height: '200vh',
+
                 "& .pro-sidebar-inner": {
                     background: `${colors.primary[400]} !important`,
-                    height: "100vh"
                 },
                 "& .pro-icon-wrapper": {
-                    backgroundColor: "transparent !important"
+                    backgroundColor: "transparent !important",
                 },
                 "& .pro-inner-item": {
                     padding: "5px 35px 5px 20px !important",

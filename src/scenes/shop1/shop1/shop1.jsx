@@ -1,70 +1,134 @@
-import * as React from 'react';
-import { Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import shoe from '../../Img/shoe.jpg'
+import React, { useState } from 'react';
+import { mockDataShop1 } from "../../../data/mockData";
 
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
-function FormRow() {
-    return (
-        <React.Fragment
-
-        >
-            <Box
-                display="flex"
-                flexDirection="column"
-            >
-                <Grid item xs={4}>
-                    <img src={shoe} alt="" width={250}></img>
-                    Nike Airmax 270<br />
-                    $120<br />
-                    +
-                </Grid>
-            </Box>
-            <Grid item xs={4}>
-                <img src={shoe} alt="" width={250}></img>
-            </Grid>
-            <Grid item xs={4}>
-                <img src={shoe} alt="" width={250}></img>
-            </Grid>
-
-        </React.Fragment >
-
-    );
-}
-
-export default function Shop1() {
-
+const Shop1 = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
+
+    const [show, setShow] = useState(false);
+
+
+    const [cart, setCart] = useState(mockDataShop1);
+
+    // const displayButton = (id) => {
+    //     console.log("addbutton clicked")
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id ? { ...item, show: !item.show } : item
+    //         )
+    //     );
+    // }
+
+    const increase = (id) => {
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+            )
+        );
+    };
+
+    const decrease = (id) => {
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+            )
+        );
+    };
+
+    // const increase = (id) => {
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    //         )
+    //     );
+    // };
+
+    // const decrease = (id) => {
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+    //         )
+    //     );
+    //     setCart((prevCart) =>
+    //         prevCart.map((item) =>
+    //             item.id === id && item.quantity === 1 ? { ...item, show: true } : item
+    //         )
+    //     );
+    // };
+
+
     return (
-        <Box
-        >
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={1}>
-                    <Grid container item spacing={3}>
-                        <FormRow />
-                    </Grid>
-                    <Grid container item spacing={3}>
-                        <FormRow />
-                    </Grid>
-                    <Grid container item spacing={3}>
-                        <FormRow />
-                    </Grid>
-                </Grid>
-            </Box>
-        </Box>
+        <Box m="20px">
+            <Box
+                gridColumn="span 8"
+                gridRow="span 2"
+                display="grid"
+                gridTemplateColumns="1fr 1fr 1fr"
+                gap="20px"
+            // width="100px"
+            >
+                {mockDataShop1.map((item) => (
+                    <div key={item.id}>
+
+                        < Box
+                            // display="flex"
+                            // justifyContent="space-between"
+                            marginBottom="15px"
+                            flexDirection="column"
+                            borderRadius="20px"
+                            // padding="15px"
+                            backgroundColor={colors.primary[400]}
+                            key={item.id}
+
+                        >
+                            <Box>
+                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                                    <div className="image2">
+                                        <img src={item.ProductImage} width={270} height={200} />
+                                    </div>
+                                </Typography>
+                            </Box>
+                            <Box
+                                display="flex"
+                                justifyContent="space-between"
+                            >
+                                <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="30px" fontSize="15px" marginLeft="20px" color={colors.greenAccent[100]}>
+                                    {item.ProductName}
+                                    <br />
+                                    <br />
+                                    {item.ProductPrice}
+                                </Typography>
+
+
+
+                                {item.quantity >= 1 && item.show ? (
+                                    <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
+                                        <button className="bgColor" onClick={() => increase(item.id)}>+</button>
+                                        <span className="space" />
+                                        {item.quantity}
+                                        <span className="space" />
+                                        <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
+                                    </Box>
+                                ) : (
+                                    <Box>
+                                        <button onClick={() => setShow(item.id)}>Add to cart</button>
+                                    </Box>
+                                )}
+                            </Box>
+                        </Box>
+                    </div>
+                ))
+                }
+
+            </Box >
+
+        </Box >
+
+
     );
-}
+};
+
+export default Shop1;

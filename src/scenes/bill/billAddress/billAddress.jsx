@@ -33,6 +33,8 @@ const BillAddress = () => {
         setSelectedValue(event.target.value);
     };
 
+
+
     const [checked, setChecked] = React.useState(true);
 
     const handleChangeCheck = (event) => {
@@ -60,7 +62,9 @@ const BillAddress = () => {
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
-                    marginBottom="20px" color={colors.grey[100]} >
+                    marginBottom="20px"
+                    color={colors.grey[100]}
+                >
                     Billing & Address
                     {/* <button className="button3">+ Add New Address</button> */}
 
@@ -70,131 +74,132 @@ const BillAddress = () => {
                     >
                         + Add New Address
                     </Button>
-                    <Dialog
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                        PaperProps={{ style: { minWidth: '500px', backgroundColor: '#171c24', border: 'solid 1px white' } }}
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                            {"Add new Address"}
-                        </DialogTitle>
-                        <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-
-                                <Radio
-                                    checked={selectedValue === 'a'}
-                                    onChange={handleChange}
-                                    value="a"
-                                    name="radio-buttons"
-                                    title="home"
-                                    inputProps={{ 'aria-label': 'A' }}
-                                />
-                                <label>
-                                    Home
-                                </label>
-                                <Radio
-                                    checked={selectedValue === 'b'}
-                                    onChange={handleChange}
-                                    value="b"
-                                    name="radio-buttons"
-                                    inputProps={{ 'aria-label': 'B' }}
-                                />
-                                <label>
-                                    Office
-                                </label>
-
-
-                                <Box
-                                    sx={{
-                                        width: 500,
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        gap: '10px',
-                                        maxWidth: '100%',
-                                        marginBottom: '20px',
-                                        marginTop: "20px",
-                                        color: '#455a79',
-                                    }}
-                                >
-                                    <TextField fullWidth label="Full Name" id="Full Name" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                        InputProps={{
-                                            style: {
-                                                borderColor: 'red', // Set the border color
-                                            },
-                                        }} />
-
-                                    <TextField fullWidth label="Town/Phone" id="Town/Phone" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                        InputProps={{
-                                            style: {
-                                                borderColor: 'red', // Set the border color
-                                            },
-                                        }} />
-                                </Box>
-                                <Box
-                                    sx={{
-                                        width: 500,
-                                        maxWidth: '100%',
-                                        marginBottom: '20px',
-                                        marginTop: "20px",
-                                        color: '#2499ef',
-                                    }}
-                                >
-                                    <TextField fullWidth label="Address" id="Address" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                        InputProps={{
-                                            style: {
-                                                borderColor: 'red', // Set the border color
-                                            },
-                                        }} />
-                                </Box>
-
-                                <Box
-                                    sx={{
-                                        width: 500,
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        gap: '10px',
-                                        maxWidth: '100%',
-                                        marginBottom: '20px',
-                                        marginTop: "20px",
-                                        color: '#455a79',
-                                    }}
-                                >
-
-                                    <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                        InputProps={{
-                                            style: {
-                                                borderColor: 'red', // Set the border color
-                                            },
-                                        }} />
-
-                                    <TextField fullWidth label="Country" id="Country" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                        InputProps={{
-                                            style: {
-                                                borderColor: 'red', // Set the border color
-                                            },
-                                        }} />
-                                </Box>
-
-                                <Checkbox
-                                    checked={checked}
-                                    onChange={handleChangeCheck}
-                                    inputProps={{ 'aria-label': 'controlled' }}
-                                />
-                                <span>Use this address as default</span>
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose} style={{ border: '1px solid #5d6066', marginRight: '8px', color: 'white' }}>
-                                Cancel
-                            </Button>
-                            <Button onClick={handleClose} autoFocus style={{ border: '1px solid #5d6066', background: '#2499ef', color: 'white' }}>
-                                Deliver to this address
-                            </Button>
-                        </DialogActions>
-                    </Dialog>
                 </Typography>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    PaperProps={{ style: { minWidth: '500px', backgroundColor: '#171c24;', border: 'solid 1px white' } }}
+                >
+                    <DialogTitle id="alert-dialog-title">
+                        {"Add new Address"}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+
+                            <Radio
+                                checked={selectedValue === 'a'}
+                                onChange={handleChange}
+                                value="a"
+                                name="radio-buttons"
+                                title="home"
+                                inputProps={{ 'aria-label': 'A' }}
+                            />
+                            <label>
+                                Home
+                            </label>
+                            <Radio
+                                checked={selectedValue === 'b'}
+                                onChange={handleChange}
+                                value="b"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'B' }}
+                            />
+                            <label>
+                                Office
+                            </label>
+
+
+                            <Box
+                                sx={{
+                                    width: 500,
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    gap: '10px',
+                                    maxWidth: '100%',
+                                    marginBottom: '20px',
+                                    marginTop: "20px",
+                                    color: '#455a79',
+                                }}
+                            >
+                                <TextField fullWidth label="Full Name" id="Full Name" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                    InputProps={{
+                                        style: {
+                                            borderColor: 'red', // Set the border color
+                                        },
+                                    }} />
+
+                                <TextField fullWidth label="Phone" id="Phone" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                    InputProps={{
+                                        style: {
+                                            borderColor: 'red', // Set the border color
+                                        },
+                                    }} />
+                            </Box>
+                            <Box
+                                sx={{
+                                    width: 500,
+                                    maxWidth: '100%',
+                                    marginBottom: '20px',
+                                    marginTop: "20px",
+                                    color: '#2499ef',
+                                }}
+                            >
+                                <TextField fullWidth label="Address" id="Address" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                    InputProps={{
+                                        style: {
+                                            borderColor: 'red', // Set the border color
+                                        },
+                                    }} />
+                            </Box>
+
+                            <Box
+                                sx={{
+                                    width: 500,
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    gap: '10px',
+                                    maxWidth: '100%',
+                                    marginBottom: '20px',
+                                    marginTop: "20px",
+                                    color: '#455a79',
+                                }}
+                            >
+
+                                <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                    InputProps={{
+                                        style: {
+                                            borderColor: 'red', // Set the border color
+                                        },
+                                    }} />
+
+                                <TextField fullWidth label="Country" id="Country" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                    InputProps={{
+                                        style: {
+                                            borderColor: 'red', // Set the border color
+                                        },
+                                    }} />
+                            </Box>
+
+                            <Checkbox
+                                checked={checked}
+                                onChange={handleChangeCheck}
+                                inputProps={{ 'aria-label': 'controlled' }}
+                            />
+                            <span>Use this address as default</span>
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose} style={{ border: '1px solid #5d6066', marginRight: '8px', color: 'white' }}>
+                            Cancel
+                        </Button>
+                        <Button onClick={handleClose} autoFocus style={{ border: '1px solid #5d6066', background: '#2499ef', color: 'white' }}>
+                            Deliver to this address
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+
 
                 < Box
                     display="flex"

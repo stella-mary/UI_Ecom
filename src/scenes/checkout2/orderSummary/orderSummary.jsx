@@ -81,13 +81,13 @@ const OrderSummary = () => {
                     p="15px"
                 >
                     <Box>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontSize="20px" fontWeight="600" paddingBottom="10px">
+                        <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="10px">
                             Total
                         </Typography>
                     </Box>
                     <Box p="5px 10px" >
                         {/* ${transaction.cost} */}
-                        <Typography color="#2499ee;" fontWeight="600" fontSize="20px" paddingBottom="5px">$285</Typography>
+                        <Typography color="#2499ee;" fontWeight="600" fontSize="15px" paddingBottom="5px">$285</Typography>
                     </Box>
                 </Box>
 

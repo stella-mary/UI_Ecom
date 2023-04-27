@@ -87,7 +87,15 @@ const PaymentMethod = () => {
 
                         <RadioGroup name="use-radio-group" defaultValue="first">
                             <MyFormControlLabel
-                                className="bgColor3" value="PayPal" label="PayPal" control={<Radio />} />
+                                value="PayPal" control={<Radio />}
+                                label={
+                                    <Typography>
+                                        <span className="bgColor7">Pay</span>
+                                        <span className="bgColor8">Pal</span>
+                                    </Typography>
+                                }
+
+                            />
                         </RadioGroup>
                         {/* <li><i><span className="bgColor2">Pay</span><span className="bgColor3">Pal</span></i></li> */}
                     </Typography>
@@ -95,14 +103,30 @@ const PaymentMethod = () => {
                     <Box
                         display="flex"
                         flexDirection="row"
+                        alignItems="center" // Set alignItems to 'center' to vertically align items
                         justifyContent="space-between"
                     >
                         <RadioGroup name="use-radio-group" defaultValue="first">
                             <MyFormControlLabel
-                                value="Credit or debit card" label="Credit or debit card" control={<Radio />} />
-                            <img src={visa} width="40" alt="" /><span className="space" /><img src={Mastercard} width="40" alt="" />
-                            <span className="space" /><img src={americanexpress} width="40" alt="" />
+                                value="Credit or debit card" control={<Radio />}
+                                label={
+                                    <Typography>
+                                        <span className="bgColor9">Credit or debit</span>
+                                    </Typography>
+                                }
+
+                            />
                         </RadioGroup>
+                        <Box // Use another Box component to group the images and add space between them
+                            display="flex"
+                            alignItems="center"
+                        >
+                            <img src={visa} width="40" alt="" />
+                            <Box sx={{ marginLeft: '8px' }} /> {/* Add left margin to create space */}
+                            <img src={Mastercard} width="40" alt="" />
+                            <Box sx={{ marginLeft: '8px' }} /> {/* Add left margin to create space */}
+                            <img src={americanexpress} width="40" alt="" />
+                        </Box>
                     </Box>
 
 
@@ -164,7 +188,13 @@ const PaymentMethod = () => {
                     <p className="bordertop">&#160;</p>
                     <RadioGroup name="use-radio-group" defaultValue="first">
                         <MyFormControlLabel
-                            value="Cash on Delivery" label="Cash on Delivery" control={<Radio />} />
+                            value="Cash on Delivery" control={<Radio />}
+                            label={
+                                <Typography>
+                                    <span className="bgColor9">Cash on Delivery</span>
+                                </Typography>
+                            }
+                        />
                     </RadioGroup>
                 </Box >
             </Box >
