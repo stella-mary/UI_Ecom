@@ -188,6 +188,11 @@ margin-left: 30%;
   position: relative;
 }
 
+.bgcolorW{
+  color: #fff;
+  
+}
+
 
 ::-webkit-scrollbar {
   width: 10px;
