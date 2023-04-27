@@ -1,5 +1,14 @@
 import { useTheme } from "@mui/material";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 import React, { useState, Fragment } from 'react';
+
+import FormGroup from '@mui/material/FormGroup';
+import Checkbox from '@mui/material/Checkbox';
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -45,7 +54,7 @@ export default function CheckBox() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -54,11 +63,28 @@ export default function CheckBox() {
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                ))} */}
+                <ListItemButton>
+                    <FormControl>
+                        <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="demo-radio-buttons-group-label"
+                            defaultValue="female"
+                            name="radio-buttons-group"
+
+                        >
+                            <FormControlLabel value="all" control={<Radio />} label="All" />
+                            <FormControlLabel value="shoes" control={<Radio />} label="Shoes" />
+                            <FormControlLabel value="clothing" control={<Radio />} label="Clothing" />
+                            <FormControlLabel value="accessories" control={<Radio />} label="Accessories" />
+
+                        </RadioGroup>
+                    </FormControl>
+                </ListItemButton>
+
+                {/* <Divider /> */}
+
+                {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -67,9 +93,46 @@ export default function CheckBox() {
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>
-                ))}
+                ))} */}
+                <ListItemButton>
+                    <FormControl>
+                        <FormLabel>Gender</FormLabel>
+                        <FormGroup>
+                            <FormControlLabel control={<Checkbox defaultChecked />} label="Men" />
+                            <FormControlLabel required control={<Checkbox />} label="Woman" />
+                            <FormControlLabel required control={<Checkbox />} label="Kids" />
+                        </FormGroup>
+                    </FormControl>
+                </ListItemButton>
+                <ListItemButton>
+                    Color
+                </ListItemButton>
+                <ListItemButton
+                    display="flex"
+                    flexDirection="row"
+
+                    justifyContent="space-between"
+                >
+                    <div class="circle" /><span class="space1" /><div class="circle1" /><span class="space1" />
+                    <div class="circle2" /><span class="space1" /><div class="circle3" /><span class="space1" />
+                    <div class="circle4" />
+                </ListItemButton>
+                <ListItemButton>
+                    Price Range
+                </ListItemButton>
+                <ListItemButton
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                >
+                    <button>Min</button>
+                    <button>Max</button>
+                </ListItemButton>
+                <ListItemButton>
+                    Rating
+                </ListItemButton>
             </List>
-        </Box>
+        </Box >
     );
 
 
