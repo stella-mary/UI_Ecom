@@ -197,6 +197,10 @@ margin-left: 30%;
   padding-left: 10px;
 }
 
+.space2{
+  padding-left: 50%;
+}
+
 .app {
   display: flex;
   position: relative;

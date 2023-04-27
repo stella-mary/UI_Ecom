@@ -82,7 +82,6 @@ const Shop1 = () => {
                             // padding="15px"
                             backgroundColor={colors.primary[400]}
                             key={item.id}
-
                         >
                             <Box>
                                 <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >

@@ -100,7 +100,7 @@ const CartDetails = () => {
                                     {item.ProductStock}
                                 </Typography>
                             </Box>
-                            {item.quantity >= 1 && item.show ? (
+                            {item.quantity >= 1 ? (
                                 <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
                                     <button className="bgColor" onClick={() => increase(item.id)}>+</button>
                                     <span className="space" />
@@ -110,7 +110,7 @@ const CartDetails = () => {
                                 </Box>
                             ) : (
                                 <Box>
-                                    <button onClick={() => displayButton(item.id)}>Add to cart</button>
+                                    <button onClick={() => increase(item.id)}>Add to cart</button>
                                 </Box>
                             )}
 

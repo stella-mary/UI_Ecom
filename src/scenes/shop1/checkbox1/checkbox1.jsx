@@ -52,6 +52,7 @@ export default function CheckBox() {
         <Box
             // sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
+            backgroundColor={colors.primary[400]}
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
@@ -68,11 +69,13 @@ export default function CheckBox() {
                 ))} */}
 
 
-
-                <ListItemButton>
-                    <ListItemIcon>
-                        Filter
-                    </ListItemIcon>
+                <ListItemButton
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    font-size="20px"
+                >
+                    Filter<span className="space2" />
                     <ClearSharpIcon />
                 </ListItemButton>
 
