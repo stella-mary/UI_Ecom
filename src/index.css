@@ -119,6 +119,16 @@ body,
   background: #0c5d96;
 }
 
+.buttonC {
+  background-color: #424242;
+  /* border: none; */
+  color: white;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border:solid 1px #656b73;
+}
+
 .bgColor7 {
   color: #283b82;
   font-style: italic;

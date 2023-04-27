@@ -5,10 +5,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import React, { useState, Fragment } from 'react';
-
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+import RotateLeftOutlinedIcon from '@mui/icons-material/RotateLeftOutlined';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
-
+import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -64,6 +66,19 @@ export default function CheckBox() {
                         </ListItemButton>
                     </ListItem>
                 ))} */}
+
+
+
+                <ListItemButton>
+                    <ListItemIcon>
+                        Filter
+                    </ListItemIcon>
+                    <ClearSharpIcon />
+                </ListItemButton>
+
+
+                <Divider />
+
                 <ListItemButton>
                     <FormControl>
                         <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
@@ -82,18 +97,7 @@ export default function CheckBox() {
                     </FormControl>
                 </ListItemButton>
 
-                {/* <Divider /> */}
 
-                {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))} */}
                 <ListItemButton>
                     <FormControl>
                         <FormLabel>Gender</FormLabel>
@@ -125,11 +129,19 @@ export default function CheckBox() {
                     flexDirection="row"
                     justifyContent="space-between"
                 >
-                    <button>Min</button>
-                    <button>Max</button>
+                    <button className="buttonC">Min</button><span className="space" />
+                    <button className="buttonC">Max</button>
                 </ListItemButton>
                 <ListItemButton>
                     Rating
+                </ListItemButton>
+                <ListItemButton>
+                    <Stack spacing={1}>
+                        <Rating name="size-large" defaultValue={2} size="large" />
+                    </Stack>
+                </ListItemButton>
+                <ListItemButton>
+                    <button className="buttonC"><RotateLeftOutlinedIcon /> Clear all</button>
                 </ListItemButton>
             </List>
         </Box >
