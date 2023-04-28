@@ -7,36 +7,7 @@ const CartDetails = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
-
-
-    const displayButton = (id) => {
-        console.log("addbutton clicked")
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id ? { ...item, show: !item.show } : item
-            )
-        );
-    }
-
     const [cart, setCart] = useState(mockDataCart);
-
-    // const increase = (id) => {
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-    //         )
-    //     );
-    // };
-
-    // const decrease = (id) => {
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id && item.quantity >= 1
-    //                 ? { ...item, quantity: item.quantity - 1 }
-    //                 : item
-    //         )
-    //     );
-    // };
 
     const increase = (id) => {
         setCart((prevCart) =>

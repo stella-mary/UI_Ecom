@@ -40,7 +40,7 @@ export const mockDataShop1 = [
         id: 2,
         ProductName: "Nike Pro Max 270",
         ProductImage: "https://tse2.mm.bing.net/th?id=OIP.TIWckpoCSJiDO_8U3qewegHaEh&pid=Api&P=0",
-        ProductPrice: "$450",
+        ProductPrice: "$130",
         ProductStock: "In Stock",
         quantity: 1,
     },

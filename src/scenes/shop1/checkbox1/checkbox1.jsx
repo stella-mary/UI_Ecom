@@ -16,27 +16,24 @@ import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { tokens } from "../../../theme";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 
-
 export default function CheckBox() {
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClose = (value: string) => {
+        setOpen(false);
+    };
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
     const [state, setState] = React.useState({
-        // top: false,
-        // left: false,
-        // bottom: false,
         right: false,
     });
 
@@ -53,32 +50,20 @@ export default function CheckBox() {
             // sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             backgroundColor={colors.primary[400]}
-            onClick={toggleDrawer(anchor, false)}
+            onClick={toggleDrawer(anchor, true)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))} */}
-
-
                 <ListItemButton
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
                     font-size="20px"
+
                 >
                     Filter<span className="space2" />
-                    <ClearSharpIcon />
+                    <Button open={open} onClose={handleClose}><ClearSharpIcon /></Button>
                 </ListItemButton>
-
 
                 <Divider />
 
@@ -89,17 +74,14 @@ export default function CheckBox() {
                             aria-labelledby="demo-radio-buttons-group-label"
                             defaultValue="female"
                             name="radio-buttons-group"
-
                         >
                             <FormControlLabel value="all" control={<Radio />} label="All" />
                             <FormControlLabel value="shoes" control={<Radio />} label="Shoes" />
                             <FormControlLabel value="clothing" control={<Radio />} label="Clothing" />
                             <FormControlLabel value="accessories" control={<Radio />} label="Accessories" />
-
                         </RadioGroup>
                     </FormControl>
                 </ListItemButton>
-
 
                 <ListItemButton>
                     <FormControl>
@@ -150,7 +132,6 @@ export default function CheckBox() {
         </Box >
     );
 
-
     return (
         <Box
             display="grid"
@@ -180,7 +161,7 @@ export default function CheckBox() {
             </Box>
 
             < Box
-                // backgroundColor={colors.primary[400]}
+
                 border="solid 2px #33383f"
                 width="100px"
                 padding="10px"

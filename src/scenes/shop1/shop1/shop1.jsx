@@ -8,19 +8,7 @@ const Shop1 = () => {
     const colors = tokens(theme.palette.mode);
 
 
-    const [show, setShow] = useState(false);
-
-
     const [cart, setCart] = useState(mockDataShop1);
-
-    // const displayButton = (id) => {
-    //     console.log("addbutton clicked")
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id ? { ...item, show: !item.show } : item
-    //         )
-    //     );
-    // }
 
     const increase = (id) => {
         setCart((prevCart) =>
@@ -36,29 +24,12 @@ const Shop1 = () => {
                 item.id === id ? { ...item, quantity: item.quantity - 1 } : item
             )
         );
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id && item.quantity === 1 ? { ...item, show: true } : item
+            )
+        );
     };
-
-    // const increase = (id) => {
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-    //         )
-    //     );
-    // };
-
-    // const decrease = (id) => {
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-    //         )
-    //     );
-    //     setCart((prevCart) =>
-    //         prevCart.map((item) =>
-    //             item.id === id && item.quantity === 1 ? { ...item, show: true } : item
-    //         )
-    //     );
-    // };
-
 
     return (
         <Box m="20px">
@@ -70,16 +41,13 @@ const Shop1 = () => {
                 gap="20px"
             // width="100px"
             >
-                {mockDataShop1.map((item) => (
+                {cart.map((item) => (
                     <div key={item.id}>
 
                         < Box
-                            // display="flex"
-                            // justifyContent="space-between"
                             marginBottom="15px"
                             flexDirection="column"
                             borderRadius="20px"
-                            // padding="15px"
                             backgroundColor={colors.primary[400]}
                             key={item.id}
                         >
@@ -94,26 +62,54 @@ const Shop1 = () => {
                                 display="flex"
                                 justifyContent="space-between"
                             >
-                                <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="30px" fontSize="15px" marginLeft="20px" color={colors.greenAccent[100]}>
+                                <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="30px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
                                     {item.ProductName}
                                     <br />
                                     <br />
                                     {item.ProductPrice}
                                 </Typography>
 
-
-
-                                {item.quantity >= 1 && item.show ? (
-                                    <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
-                                        <button className="bgColor" onClick={() => increase(item.id)}>+</button>
+                                {item.quantity >= 1 ? (
+                                    <Box variant="h3" fontWeight="400"
+                                        fontSize="15px"
+                                        color={colors.grey[100]}
+                                        border="solid 2px #2f4365"
+                                        display="flex"
+                                        flexDirection="row"
+                                        borderRadius="10px"
+                                        justifyContent="space-between"
+                                        marginTop="30px"
+                                        marginRight="5px"
+                                        width="100px"
+                                        height="40px"
+                                        cursor="pointer"
+                                        padding="5px"
+                                    >
+                                        <div onClick={() => increase(item.id)}>+</div>
                                         <span className="space" />
                                         {item.quantity}
                                         <span className="space" />
-                                        <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
+                                        <div onClick={() => decrease(item.id)}>-</div>
+
                                     </Box>
                                 ) : (
-                                    <Box>
-                                        <button onClick={() => setShow(item.id)}>Add to cart</button>
+                                    <Box variant="h3" fontWeight="400"
+                                        fontSize="15px"
+                                        color={colors.grey[100]}
+                                        border="solid 2px #2f4365"
+                                        display="flex"
+                                        flexDirection="row"
+                                        borderRadius="10px"
+                                        justifyContent="space-between"
+                                        marginTop="30px"
+                                        marginRight="5px"
+                                        textAlign="left"
+                                        width="100px"
+                                        height="40px"
+                                        cursor="pointer"
+                                        padding="5px"
+                                    >
+                                        <div onClick={() => increase(item.id)}>+</div>
                                     </Box>
                                 )}
                             </Box>
