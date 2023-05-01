@@ -47,10 +47,23 @@ body,
   outline: none;
 }
 
+.button4{
+  background-color:#222b36;
+  padding: 10px;
+  width: 100px;
+  color: white;
+  font-size: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: solid 1px #3d454e;
+  outline: none;
+}
+
 .button3{
   background-color: #2499ef;
   padding: 10px;
   color: white;
+  width: 100px;
   /* width: 25%; */
   font-size: 12px;
   border: solid 1px #3d454e;
@@ -59,11 +72,9 @@ body,
   cursor: pointer;
 }
 
+
 .bgColor {
   background-color: #333c46;
-  /* border-color: #1f2a40;
-  border: solid 1px none; */
-  outline: none;
   border-radius: 1px;
   color: #2499ee;
   cursor: pointer;
@@ -145,8 +156,17 @@ body,
 
 .bgColor9{
   color: white;
-  
   font-size: 15px;
+}
+
+.bgColorR{
+  color: #ff316f; 
+}
+
+
+.bgColor10 {
+ color: #455a79;
+  cursor: pointer;
 }
 
 .color{

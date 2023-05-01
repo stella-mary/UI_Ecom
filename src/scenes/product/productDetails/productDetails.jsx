@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material";
 // import shoe from "path/to/shoe";
 import shoe from '../../Img/shoe.jpg'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 export default function ProductDetails() {
     return (
         <Box
@@ -58,14 +60,34 @@ export default function ProductDetails() {
                 <Typography variant="h4" color="#7c91a6" marginTop="20px">NIKE</Typography>
                 <Typography variant="h2" marginTop="10px"><b>Air Jordan 270</b></Typography>
                 <Typography variant="h4" marginTop="5px" color="#2499ef">$350</Typography>
-                <Typography variant="h5" marginTop="20px">Colors:</Typography>
-                <Typography variant="h5" marginTop="20px">Select size:<span class="space" />
+                <Typography variant="h5" marginTop="20px"
+                    display="flex"
+                    flexDirection="space-between"
+                >Colors:<span className="space" />
+                    <div class="circle" /> <span class="space1" /><div class="circle1" /><span class="space1" />
+                    <div class="circle2" /> <span class="space1" />
+                    <div class="circle4" />
+                </Typography>
+
+                < Box
+
+                    border="solid 2px #33383f"
+                    width="100px"
+                    padding="10px"
+                    textAlign="center"
+                    display="flex"
+                    flexDirection="row"
+                    cursor="pointer"
+                    borderRadius="5px"
+                    justifyContent="space-between"
+
+                >
                     <select>
                         <option value="">40</option>
                         <option value="">41</option>
                         <option value="">42</option>
                     </select>
-                </Typography>
+                </Box>
                 <Typography variant="h5" marginTop="20px">Quantity:</Typography>
                 <Box
                     display="flex"
@@ -77,6 +99,6 @@ export default function ProductDetails() {
                     <Typography><span class="bgcolor5">Buy Now</span></Typography>
                 </Box>
             </Box>
-        </Box>
+        </Box >
     );
 }

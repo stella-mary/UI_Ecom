@@ -69,7 +69,29 @@ const Shop1 = () => {
                                     {item.ProductPrice}
                                 </Typography>
 
-                                {item.quantity >= 1 ? (
+                                {/* {item.quantity < 1 ? (
+
+                                    <Box variant="h3" fontWeight="400"
+                                        fontSize="15px"
+                                        color={colors.grey[100]}
+                                        border="solid 2px #2f4365"
+                                        display="flex"
+                                        flexDirection="row"
+                                        borderRadius="10px"
+                                        justifyContent="space-between"
+                                        marginTop="30px"
+                                        marginRight="5px"
+                                        textAlign="left"
+                                        width="100px"
+                                        height="40px"
+                                        cursor="pointer"
+                                        padding="5px"
+                                    >
+                                        <div onClick={() => increase(item.id)}>+</div>
+                                    </Box>
+
+                                ) : (
+
                                     <Box variant="h3" fontWeight="400"
                                         fontSize="15px"
                                         color={colors.grey[100]}
@@ -91,8 +113,11 @@ const Shop1 = () => {
                                         <span className="space" />
                                         <div onClick={() => decrease(item.id)}>-</div>
 
-                                    </Box>
-                                ) : (
+                                    </Box> */}
+
+
+                                {item.quantity >= 1 ? (
+                                    // <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
                                     <Box variant="h3" fontWeight="400"
                                         fontSize="15px"
                                         color={colors.grey[100]}
@@ -106,12 +131,36 @@ const Shop1 = () => {
                                         textAlign="left"
                                         width="100px"
                                         height="40px"
+                                        padding="5px"
+                                    >
+                                        <div className="bgColor10" onClick={() => decrease(item.id)}>-</div>
+                                        <span className="space" />
+                                        {item.quantity}
+                                        <span className="space" />
+                                        <div onClick={() => increase(item.id)}>+</div>
+
+                                    </Box>
+                                ) : (
+                                    <Box variant="h3" fontWeight="400"
+                                        fontSize="15px"
+                                        color={colors.grey[100]}
+                                        // border="solid 2px #2f4365"
+
+                                        borderRadius="10px"
+                                        // justifyContent="space-between"
+                                        marginTop="30px"
+                                        marginRight="5px"
+                                        textAlign="right"
+                                        width="100px"
+                                        height="40px"
                                         cursor="pointer"
                                         padding="5px"
                                     >
-                                        <div onClick={() => increase(item.id)}>+</div>
+                                        <button className="bgColor" onClick={() => increase(item.id)}>+</button>
                                     </Box>
                                 )}
+
+                                {/* )} */}
                             </Box>
                         </Box>
                     </div>
