@@ -47,6 +47,19 @@ body,
   outline: none;
 }
 
+.checkOut {
+  margin-top: 20px;
+}
+
+.productDetails {
+ display: flex;
+ color: red;
+ flex-direction: column;
+ justify-content: space-between;
+
+}
+
+
 .button4{
   background-color:#222b36;
   padding: 10px;
