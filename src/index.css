@@ -11,9 +11,7 @@ body,
   /* font-weight: bold; */
 }
 
-
-
-.button{
+.button {
   background-color: #2499ee;
   padding: 10px;
   color: white;
@@ -21,6 +19,7 @@ body,
   font-size: 15px;
   border-radius: 10px;
   cursor: pointer;
+  border: 1px solid black;
 }
 
 .button1{
@@ -53,11 +52,18 @@ body,
 
 .productDetails {
  display: flex;
- color: red;
+ /* color: red; */
  flex-direction: column;
  justify-content: space-between;
-
 }
+
+.productDetails1 {
+  display: flex;
+  /* color: red; */
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+ }
 
 
 .button4{
@@ -176,6 +182,18 @@ body,
   color: #ff316f; 
 }
 
+
+.button5{
+  background-color: #2499ef;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  font-size: 12px;
+  border: solid 1px #3d454e;
+  outline: none; 
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 .bgColor10 {
  color: #455a79;

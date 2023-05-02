@@ -34,66 +34,53 @@ const CartDetails = () => {
 
     return (
         <Box m="20px">
-            <Box
-                gridColumn="span 8"
-                gridRow="span 2"
-            >
-                {cart.map((item) => (
-                    <div key={item.id}>
 
-                        < Box
-                            display="flex"
-                            justifyContent="space-between"
-                            marginBottom="15px"
-                            borderRadius="10px"
-                            padding="15px"
-                            backgroundColor={colors.primary[400]}
-                            key={item.id}
-                        // key={`${Cart.id}-${i}`}
-                        >
-                            <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                                    <div className="image">
-                                        <img src={item.ProductImage} width={50} height={50} />
+            {cart.map((item) => (
+                <div key={item.id}>
+
+                    < Box
+                        display="flex"
+                        justifyContent="space-between"
+                        marginBottom="15px"
+                        borderRadius="10px"
+                        padding="15px"
+                        backgroundColor={colors.primary[400]}
+                        key={item.id}
+                    >
+                        <Box>
+                            <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                                <div className="productDetails1">
+                                    <img src={item.ProductImage} width={50} height={60} style={{ borderRadius: '10%' }} />
+
+
+                                    <div className='productDetails'>
+                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductName}</Typography>
+                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductPrice}</Typography>
+                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductStock}</Typography>
                                     </div>
-                                </Typography>
-                            </Box>
-                            <Box
-                                marginLeft="-30%"
-                            >
-                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
-                                    {item.ProductName}
-                                </Typography>
-                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.greenAccent[100]} marginBottom="5px">
-                                    {item.ProductPrice}
-                                </Typography>
-                                <Typography variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[500]} marginBottom="5px">
-                                    {item.ProductStock}
-                                </Typography>
-                            </Box>
-                            {item.quantity >= 1 ? (
-                                <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
-                                    <button className="bgColor" onClick={() => increase(item.id)}>+</button>
-                                    <span className="space" />
-                                    {item.quantity}
-                                    <span className="space" />
-                                    <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
-                                </Box>
-                            ) : (
-                                <Box>
-                                    <button onClick={() => increase(item.id)}>Add to cart</button>
-                                </Box>
-                            )}
-
+                                </div>
+                            </Typography>
                         </Box>
-                    </div>
-                ))
-                }
+                        {item.quantity >= 1 ? (
+                            <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
+                                <button className="bgColor" onClick={() => increase(item.id)}>+</button>
+                                <span className="space" />
+                                {item.quantity}
+                                <span className="space" />
+                                <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
+                            </Box>
+                        ) : (
+                            <Box>
+                                <button className="button5" onClick={() => increase(item.id)}>Add to cart</button>
+                            </Box>
+                        )}
 
-            </Box >
+                    </Box>
+                </div>
+            ))
+            }
 
         </Box >
-
 
     );
 };

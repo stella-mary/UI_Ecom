@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Box from '@mui/material/Box';
+import CheckIcon from '@mui/icons-material/Check';
 
 
 const PaymentComplete2 = () => {
@@ -15,21 +16,20 @@ const PaymentComplete2 = () => {
         <Box m="20px">
 
             <Box
-                display="flex"
-                justifyContent="space-between"
-                flexDirection="column"
-                marginBottom="25px"
+
                 borderRadius="10px"
                 padding="15px"
                 backgroundColor={colors.primary[400]}
+                paddingBottom="50px"
             >
                 <Box
-                    fontSize="50px"
                     textAlign="center"
+                    marginTop="40px"
                 >
 
-                    <FontAwesomeIcon
-                        icon={faCheckCircle} size="lg" />
+                    <div style={{ backgroundColor: '#2499ef', borderRadius: '50%', display: 'inline-block', padding: '25px', width: '10%' }}>
+                        <CheckIcon style={{ fontSize: '30px' }} />
+                    </div>
                 </Box>
                 <Typography variant="h2"
                     fontWeight="600"
