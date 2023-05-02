@@ -35,6 +35,11 @@ const CartDetails = () => {
     return (
         <Box m="20px">
 
+            {/* <Box
+                gridColumn="span 4"
+                gridRow="span 2"
+            > */}
+
             {cart.map((item) => (
                 <div key={item.id}>
 
@@ -43,7 +48,7 @@ const CartDetails = () => {
                         justifyContent="space-between"
                         marginBottom="15px"
                         borderRadius="10px"
-                        padding="15px"
+                        padding="25px"
                         backgroundColor={colors.primary[400]}
                         key={item.id}
                     >
@@ -56,7 +61,7 @@ const CartDetails = () => {
                                     <div className='productDetails'>
                                         <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductName}</Typography>
                                         <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductPrice}</Typography>
-                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductStock}</Typography>
+                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color="#455978" marginBottom="5px">{item.ProductStock}</Typography>
                                     </div>
                                 </div>
                             </Typography>
@@ -81,7 +86,7 @@ const CartDetails = () => {
             }
 
         </Box >
-
+        // </Box >
     );
 };
 

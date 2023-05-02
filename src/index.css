@@ -50,6 +50,10 @@ body,
   margin-top: 20px;
 }
 
+.bgColor11{
+  color: #dc2445;
+}
+
 .productDetails {
  display: flex;
  /* color: red; */
