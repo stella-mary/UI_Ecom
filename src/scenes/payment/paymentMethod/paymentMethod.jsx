@@ -14,6 +14,9 @@ import Mastercard from '../../Img/Mastercard.png'
 import americanexpress from '../../Img/americanexpress.png'
 
 
+
+
+
 const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
     ({ theme, checked }) => ({
         '.MuiFormControlLabel-label': checked && {
@@ -42,6 +45,12 @@ MyFormControlLabel.propTypes = {
 };
 
 const PaymentMethod = () => {
+
+    const [selectedValue, setSelectedValue] = useState("a")
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -75,29 +84,29 @@ const PaymentMethod = () => {
                         Payment Method
                     </Typography>
 
+
+
                     <Typography
                         color={colors.grey[100]}
                         variant="h5"
                         fontWeight="600"
                         fontSize="15px"
                         paddingBottom="20px"
-                        display="flex"
-                        justifyContent="space-between"
                     >
 
-                        <RadioGroup name="use-radio-group" defaultValue="first">
-                            <MyFormControlLabel
-                                value="PayPal" control={<Radio />}
-                                label={
-                                    <Typography>
-                                        <span className="bgColor7">Pay</span>
-                                        <span className="bgColor8">Pal</span>
-                                    </Typography>
-                                }
+                        <Radio
+                            checked={selectedValue === 'a'}
+                            onChange={handleChange}
+                            value="a"
+                            name="radio-buttons"
+                            title="PayPal"
+                            inputProps={{ 'aria-label': 'A' }}
+                        />
+                        <label>
+                            <span className="bgColor7">Pay</span>
+                            <span className="bgColor8">Pal</span>
+                        </label>
 
-                            />
-                        </RadioGroup>
-                        {/* <li><i><span className="bgColor2">Pay</span><span className="bgColor3">Pal</span></i></li> */}
                     </Typography>
                     <p className="bordertop">&#160;</p>
                     <Box
@@ -106,19 +115,32 @@ const PaymentMethod = () => {
                         alignItems="center" // Set alignItems to 'center' to vertically align items
                         justifyContent="space-between"
                     >
-                        <RadioGroup name="use-radio-group" defaultValue="first">
-                            <MyFormControlLabel
-                                value="Credit or debit card" control={<Radio />}
-                                label={
-                                    <Typography>
-                                        <span className="bgColor9">Credit or debit</span>
-                                    </Typography>
-                                }
+                        <Typography
+                            color={colors.grey[100]}
+                            variant="h5"
+                            fontWeight="600"
+                            fontSize="15px"
+                            paddingBottom="20px"
+                        >
 
+
+
+                            <Radio
+                                checked={selectedValue === 'b'}
+                                onChange={handleChange}
+                                value="b"
+                                name="radio-buttons"
+                                title="Credit or Debit Card"
+                                inputProps={{ 'aria-label': 'B' }}
                             />
-                        </RadioGroup>
+                            <label>
+                                Credit or Debit Card
+                            </label>
+
+                        </Typography>
                         <Box // Use another Box component to group the images and add space between them
                             display="flex"
+                            marginTop="-10px"
                             alignItems="center"
                         >
                             <img src={visa} width="40" alt="" />
@@ -186,16 +208,28 @@ const PaymentMethod = () => {
                         />
                     </Box>
                     <p className="bordertop">&#160;</p>
-                    <RadioGroup name="use-radio-group" defaultValue="first">
-                        <MyFormControlLabel
-                            value="Cash on Delivery" control={<Radio />}
-                            label={
-                                <Typography>
-                                    <span className="bgColor9">Cash on Delivery</span>
-                                </Typography>
-                            }
+                    <Typography
+                        color={colors.grey[100]}
+                        variant="h5"
+                        fontWeight="600"
+                        fontSize="15px"
+                        paddingBottom="20px"
+                    >
+
+                        <Radio
+
+                            checked={selectedValue === 'c'}
+                            onChange={handleChange}
+                            value="c"
+                            name="radio-buttons"
+                            title="Cash on Delivery"
+                            inputProps={{ 'aria-label': 'C' }}
                         />
-                    </RadioGroup>
+                        <label>
+                            Cash on Delivery
+                        </label>
+
+                    </Typography>
                 </Box >
             </Box >
             <Typography

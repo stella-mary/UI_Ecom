@@ -26,13 +26,14 @@ const PaymentBill = () => {
                         color={colors.grey[100]}
                         variant="h5"
                         fontWeight="600"
+                        marginTop="10px"
                         fontSize="15px"
                         paddingBottom="20px"
                         display="flex"
                         justifyContent="space-between"
                     >
                         Billing Address
-                        <CreateOutlinedIcon />
+                        <span className="bgColor10"><CreateOutlinedIcon /></span>
                     </Typography>
 
                     <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" fontSize="15px" paddingBottom="5px">

@@ -56,9 +56,9 @@ const BillAddress = () => {
                 gridRow="span 2"
             >
 
+
                 <Typography
-                    variant="h6"
-                    fontWeight="600"
+                    fontWeight="500"
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
@@ -66,9 +66,10 @@ const BillAddress = () => {
                     color={colors.grey[100]}
                 >
                     Billing & Address
-                    {/* <button className="button3">+ Add New Address</button> */}
 
-                    <Button variant="outlined"
+                    <Button
+                        sx={{ textTransform: 'none', padding: '10px' }}
+                        variant="outlined"
                         onClick={handleClickOpen}
                         style={{ color: 'white', background: '#2499ef' }}
                     >
@@ -194,7 +195,9 @@ const BillAddress = () => {
                         <Button onClick={handleClose} style={{ border: '1px solid #5d6066', marginRight: '8px', color: 'white' }}>
                             Cancel
                         </Button>
-                        <Button onClick={handleClose} autoFocus style={{ border: '1px solid #5d6066', background: '#2499ef', color: 'white' }}>
+                        <Button
+                            sx={{ textTransform: 'none' }}
+                            onClick={handleClose} autoFocus style={{ border: '1px solid #5d6066', background: '#2499ef', color: 'white' }}>
                             Deliver to this address
                         </Button>
                     </DialogActions>

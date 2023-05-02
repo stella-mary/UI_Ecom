@@ -199,6 +199,17 @@ body,
   cursor: pointer;
 }
 
+
+.Radio-input[type="radio"]:checked {
+  /* This will change the color of the radio button when it's selected */
+  background-color: blue;
+}
+
+.my-radio input[type="radio"]:checked {
+  /* This will change the color of the radio button when it's selected */
+  background-color: red;
+}
+
 .bgColor10 {
  color: #455a79;
   cursor: pointer;
