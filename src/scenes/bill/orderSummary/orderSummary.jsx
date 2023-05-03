@@ -95,9 +95,15 @@ const OrderSummary = () => {
 
                 <Box>
                     <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="10px" textAlign="center" marginTop="10px" paddingBottom="20px">
-                        <button className="button"><AddShoppingCartIcon /> Payment</button>
+                        <button className="button">
+
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <AddShoppingCartIcon />
+                                <span class="space1" /> Payment</div>
+                        </button>
                     </Typography>
                 </Box>
+
 
             </Box>
 

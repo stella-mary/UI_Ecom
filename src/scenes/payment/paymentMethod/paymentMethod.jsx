@@ -1,7 +1,9 @@
 import { Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
-import React, { useState } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React, { useState, withStyles } from 'react';
 import Box from '@mui/material/Box';
+
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
@@ -12,9 +14,6 @@ import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
 import visa from '../../Img/visa.png'
 import Mastercard from '../../Img/Mastercard.png'
 import americanexpress from '../../Img/americanexpress.png'
-
-
-
 
 
 const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
@@ -38,13 +37,30 @@ function MyFormControlLabel(props) {
 }
 
 MyFormControlLabel.propTypes = {
-    /**
-     * The value of the component.
-     */
+
     value: PropTypes.any,
 };
 
+const outerTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#2499ef',
+        },
+    },
+});
+
+// const innerTheme = createTheme({
+//     palette: {
+//         primary: {
+//             main: green[500],
+//         },
+//     },
+// });
+
+
 const PaymentMethod = () => {
+
+
 
     const [selectedValue, setSelectedValue] = useState("a")
 
@@ -95,6 +111,7 @@ const PaymentMethod = () => {
                     >
 
                         <Radio
+                            theme={outerTheme}
                             checked={selectedValue === 'a'}
                             onChange={handleChange}
                             value="a"
@@ -122,19 +139,17 @@ const PaymentMethod = () => {
                             fontSize="15px"
                             paddingBottom="20px"
                         >
-
-
-
                             <Radio
+                                theme={outerTheme}
                                 checked={selectedValue === 'b'}
                                 onChange={handleChange}
                                 value="b"
                                 name="radio-buttons"
-                                title="Credit or Debit Card"
+                                title="Credit or debit card"
                                 inputProps={{ 'aria-label': 'B' }}
                             />
                             <label>
-                                Credit or Debit Card
+                                Credit or debit card
                             </label>
 
                         </Typography>
@@ -143,18 +158,18 @@ const PaymentMethod = () => {
                             marginTop="-10px"
                             alignItems="center"
                         >
-                            <img src={visa} width="40" alt="" />
+                            <img src={visa} width="30" alt="" />
                             <Box sx={{ marginLeft: '8px' }} /> {/* Add left margin to create space */}
-                            <img src={Mastercard} width="40" alt="" />
+                            <img src={Mastercard} width="30" alt="" />
                             <Box sx={{ marginLeft: '8px' }} /> {/* Add left margin to create space */}
-                            <img src={americanexpress} width="40" alt="" />
+                            <img src={americanexpress} width="30" alt="" />
                         </Box>
                     </Box>
 
 
                     <Box
                         sx={{
-                            width: 500,
+                            width: 600,
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
@@ -175,7 +190,7 @@ const PaymentMethod = () => {
                     </Box>
                     <Box
                         sx={{
-                            width: 500,
+                            width: 600,
                             display: 'flex',
                             flexDirection: 'row',
                             gap: '10px',
@@ -218,6 +233,7 @@ const PaymentMethod = () => {
 
                         <Radio
 
+                            theme={outerTheme}
                             checked={selectedValue === 'c'}
                             onChange={handleChange}
                             value="c"
@@ -233,8 +249,11 @@ const PaymentMethod = () => {
                 </Box >
             </Box >
             <Typography
-                marginLeft="20px"
-            ><ChevronLeftOutlinedIcon /><span className="space" />Back </Typography>
+            // marginLeft="20px"
+            >
+                <div style={{ display: 'flex' }}>
+                    <ChevronLeftOutlinedIcon />
+                    <span className="space1" />Back</div></Typography>
         </Box >
     );
 };

@@ -37,7 +37,7 @@ const PaymentBill = () => {
                     </Typography>
 
                     <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" fontSize="15px" paddingBottom="5px">
-                        Office UI lib (Home)
+                        Office UI lib <span className="color">(Home)</span>
                     </Typography>
                     <Typography color={colors.grey[300]} variant="h5" fontWeight="600" fontSize="15px" paddingBottom="5px">
                         Ap #285-7193 Ullamcorper Avenue

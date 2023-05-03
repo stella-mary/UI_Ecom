@@ -1,6 +1,8 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import React, { useState } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { mockDataCart } from "../../../data/mockData";
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,10 +15,28 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Radio from '@mui/material/Radio';
 import TextField from '@mui/material/TextField';
+
+
 import Checkbox from '@mui/material/Checkbox';
 
 
 const BillAddress = () => {
+
+    const outerTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#2499ef',
+            },
+        },
+    });
+
+    const innerTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#171c24',
+            },
+        },
+    });
 
     const [open, setOpen] = React.useState(false);
 
@@ -49,14 +69,10 @@ const BillAddress = () => {
 
     return (
         <Box m="20px">
-
-
             <Box
-                gridColumn="span 8"
-                gridRow="span 2"
+            // gridColumn="span 8"
+            // gridRow="span 2"
             >
-
-
                 <Typography
                     fontWeight="500"
                     display="flex"
@@ -76,12 +92,20 @@ const BillAddress = () => {
                         + Add New Address
                     </Button>
                 </Typography>
+
                 <Dialog
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
-                    PaperProps={{ style: { minWidth: '500px', backgroundColor: '#171c24;', border: 'solid 1px white' } }}
+                    PaperProps={{
+                        style:
+                        {
+                            minWidth: '500px',
+                            border: 'solid 1px white',
+                            backgroundColor: '#222b36'
+                        }
+                    }}
                 >
                     <DialogTitle id="alert-dialog-title">
                         {"Add new Address"}
@@ -90,6 +114,7 @@ const BillAddress = () => {
                         <DialogContentText id="alert-dialog-description">
 
                             <Radio
+                                theme={outerTheme}
                                 checked={selectedValue === 'a'}
                                 onChange={handleChange}
                                 value="a"
@@ -101,6 +126,7 @@ const BillAddress = () => {
                                 Home
                             </label>
                             <Radio
+                                theme={outerTheme}
                                 checked={selectedValue === 'b'}
                                 onChange={handleChange}
                                 value="b"
@@ -124,10 +150,10 @@ const BillAddress = () => {
                                     color: '#455a79',
                                 }}
                             >
-                                <TextField fullWidth label="Full Name" id="Full Name" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Full Name" id="Full Name" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
                                     InputProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+                                            borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
 
@@ -184,6 +210,7 @@ const BillAddress = () => {
                             </Box>
 
                             <Checkbox
+                                theme={outerTheme}
                                 checked={checked}
                                 onChange={handleChangeCheck}
                                 inputProps={{ 'aria-label': 'controlled' }}
@@ -310,8 +337,13 @@ const BillAddress = () => {
                     </Box >
                 </Box>
                 <Typography
-                    marginLeft="20px"
-                ><ChevronLeftOutlinedIcon /><span className="space" />Back </Typography>
+                // marginLeft="20px"
+                >
+                    <div style={{ display: 'flex' }}>
+                        <ChevronLeftOutlinedIcon />
+                        <span className="space1" />Back
+                    </div>
+                </Typography>
             </Box >
 
 
