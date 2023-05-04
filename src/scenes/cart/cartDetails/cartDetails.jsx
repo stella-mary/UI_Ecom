@@ -67,7 +67,7 @@ const CartDetails = () => {
                             </Typography>
                         </Box>
                         {item.quantity >= 1 ? (
-                            <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
+                            <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="15px">
                                 <button className="bgColor" onClick={() => increase(item.id)}>+</button>
                                 <span className="space" />
                                 {item.quantity}

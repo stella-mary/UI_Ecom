@@ -160,10 +160,10 @@ const BillAddress = () => {
                                         },
                                     }} />
 
-                                <TextField fullWidth label="Phone" id="Phone" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Phone" id="Phone" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
                                     InputProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+                                            borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
                             </Box>
@@ -176,10 +176,10 @@ const BillAddress = () => {
                                     color: '#2499ef',
                                 }}
                             >
-                                <TextField fullWidth label="Address" id="Address" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Address" id="Address" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
                                     InputProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+                                            borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
                             </Box>
@@ -197,10 +197,10 @@ const BillAddress = () => {
                                 }}
                             >
 
-                                <TextField fullWidth label="City" id="City" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
                                     InputProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+                                            borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
 

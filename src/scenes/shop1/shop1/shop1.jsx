@@ -65,9 +65,9 @@ const Shop1 = () => {
 
                         <Box>
                             <div className="container">
-                                <div className="circle circle-left" style={{ backgroundColor: "red" }}>
+                                <div className="circle circle-left" style={{ backgroundColor: "#011e3d" }}>
 
-                                    <div className="circle circle-right" style={{ backgroundColor: "yellow" }}>
+                                    <div className="circle circle-right" style={{ backgroundColor: "#ff316f" }}>
 
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ const Shop1 = () => {
                                     {item.ProductName}
                                     <br />
                                     <br />
-                                    {item.ProductPrice}
+                                    <span className="color"><b>{item.ProductPrice}</b></span>
                                 </Typography>
 
 
@@ -94,7 +94,7 @@ const Shop1 = () => {
                                         flexDirection="row"
                                         borderRadius="10px"
                                         justifyContent="space-between"
-                                        marginTop="30px"
+                                        marginTop="1px"
                                         marginRight="5px"
                                         textAlign="left"
                                         width="100px"
@@ -110,13 +110,12 @@ const Shop1 = () => {
                                     </Box>
                                 ) : (
                                     <Box variant="h3" fontWeight="400"
-                                        fontSize="15px"
+                                        fontSize="25px"
                                         color={colors.grey[100]}
                                         // border="solid 2px #2f4365"
-
                                         borderRadius="10px"
                                         // justifyContent="space-between"
-                                        marginTop="30px"
+                                        marginTop="1px"
                                         marginRight="5px"
                                         textAlign="right"
                                         width="100px"
