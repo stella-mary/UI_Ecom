@@ -33,6 +33,7 @@ const Shop1 = () => {
 
     return (
         <Box m="20px">
+
             <Box
                 gridColumn="span 8"
                 gridRow="span 2"
@@ -41,79 +42,46 @@ const Shop1 = () => {
                 gap="20px"
             // width="100px"
             >
-                {cart.map((item) => (
-                    <div key={item.id}>
 
-                        < Box
-                            marginBottom="15px"
-                            flexDirection="column"
-                            borderRadius="20px"
-                            backgroundColor={colors.primary[400]}
-                            key={item.id}
-                        >
-                            <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                                    <div className="image2">
-                                        <img src={item.ProductImage} width={270} height={200} />
+                {cart.map((item) => (
+
+                    < Box
+                        marginBottom="15px"
+                        display="grid"
+                        gridTemplateRows="2fr 1fr"
+                        borderRadius="20px"
+                        backgroundColor={colors.primary[400]}
+                        key={item.id}
+                    >
+                        <Box
+                            width="100%"
+                            height="100%"
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            style={{ backgroundImage: `url(${item.ProductImage})`, backgroundSize: 'cover' }}
+                        />
+
+
+                        <Box>
+                            <div className="container">
+                                <div className="circle circle-left" style={{ backgroundColor: "red" }}>
+
+                                    <div className="circle circle-right" style={{ backgroundColor: "yellow" }}>
+
                                     </div>
-                                </Typography>
-                            </Box>
+                                </div>
+                            </div>
                             <Box
                                 display="flex"
                                 justifyContent="space-between"
                             >
-                                <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="30px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
+                                <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="10px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
                                     {item.ProductName}
                                     <br />
                                     <br />
                                     {item.ProductPrice}
                                 </Typography>
-
-                                {/* {item.quantity < 1 ? (
-
-                                    <Box variant="h3" fontWeight="400"
-                                        fontSize="15px"
-                                        color={colors.grey[100]}
-                                        border="solid 2px #2f4365"
-                                        display="flex"
-                                        flexDirection="row"
-                                        borderRadius="10px"
-                                        justifyContent="space-between"
-                                        marginTop="30px"
-                                        marginRight="5px"
-                                        textAlign="left"
-                                        width="100px"
-                                        height="40px"
-                                        cursor="pointer"
-                                        padding="5px"
-                                    >
-                                        <div onClick={() => increase(item.id)}>+</div>
-                                    </Box>
-
-                                ) : (
-
-                                    <Box variant="h3" fontWeight="400"
-                                        fontSize="15px"
-                                        color={colors.grey[100]}
-                                        border="solid 2px #2f4365"
-                                        display="flex"
-                                        flexDirection="row"
-                                        borderRadius="10px"
-                                        justifyContent="space-between"
-                                        marginTop="30px"
-                                        marginRight="5px"
-                                        width="100px"
-                                        height="40px"
-                                        cursor="pointer"
-                                        padding="5px"
-                                    >
-                                        <div onClick={() => increase(item.id)}>+</div>
-                                        <span className="space" />
-                                        {item.quantity}
-                                        <span className="space" />
-                                        <div onClick={() => decrease(item.id)}>-</div>
-
-                                    </Box> */}
 
 
                                 {item.quantity >= 1 ? (
@@ -160,10 +128,10 @@ const Shop1 = () => {
                                     </Box>
                                 )}
 
-                                {/* )} */}
+
                             </Box>
                         </Box>
-                    </div>
+                    </Box>
                 ))
                 }
 

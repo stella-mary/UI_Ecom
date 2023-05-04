@@ -63,6 +63,8 @@ const BillAddress = () => {
         setChecked(event.target.checked);
     };
 
+    const [country, setCountry] = useState("")
+
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -103,7 +105,8 @@ const BillAddress = () => {
                         {
                             minWidth: '500px',
                             border: 'solid 1px white',
-                            backgroundColor: '#222b36'
+                            backgroundColor: 'rgb(23, 28, 36)',
+                            backgroundImage: 'none',
                         }
                     }}
                 >
@@ -157,7 +160,7 @@ const BillAddress = () => {
                                         },
                                     }} />
 
-                                <TextField fullWidth label="Phone" id="Phone" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Phone" id="Phone" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
                                             borderColor: 'red', // Set the border color
@@ -173,7 +176,7 @@ const BillAddress = () => {
                                     color: '#2499ef',
                                 }}
                             >
-                                <TextField fullWidth label="Address" id="Address" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Address" id="Address" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
                                             borderColor: 'red', // Set the border color
@@ -194,17 +197,17 @@ const BillAddress = () => {
                                 }}
                             >
 
-                                <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="City" id="City" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
                                             borderColor: 'red', // Set the border color
                                         },
                                     }} />
 
-                                <TextField fullWidth label="Country" id="Country" InputLabelProps={{ style: { color: '#2499ef' } }}
+                                <TextField fullWidth label="Country" name="Country" value={country} id="Country" autoComplete="Country" focused={false} InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+                                            borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
                             </Box>
