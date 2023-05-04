@@ -199,6 +199,51 @@ body,
   cursor: pointer;
 }
 
+.delete-icon {
+  height: 40px;
+  width: 40px;
+  display: block;
+  /* background-color: #fff; */
+  text-align: center;
+  border-radius: 50%;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.tick-icon {
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-color: #2499ef;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.billClick{
+  background-color: #171c24;
+  border: solid 1px red;
+}
+
+
+.delete-icon:hover {
+  background-color: gray;
+  cursor: pointer;
+ 
+}
+
+.delete-icon span  {
+  font-size: 25px;
+  color: #455a79;
+  line-height: 40px;
+}
+
+.tick-icon span  {
+  font-size: 25px;
+  color: #455a79;
+  line-height: 30px;
+}
+
 
 .Radio-input[type="radio"]:checked {
   /* This will change the color of the radio button when it's selected */

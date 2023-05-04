@@ -15,12 +15,14 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Radio from '@mui/material/Radio';
 import TextField from '@mui/material/TextField';
-
-
 import Checkbox from '@mui/material/Checkbox';
+import CheckIcon from '@mui/icons-material/Check';
+
+
 
 
 const BillAddress = () => {
+
 
     const outerTheme = createTheme({
         palette: {
@@ -47,12 +49,12 @@ const BillAddress = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
     const [selectedValue, setSelectedValue] = React.useState('a');
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
-
 
 
     const [checked, setChecked] = React.useState(true);
@@ -63,8 +65,6 @@ const BillAddress = () => {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-
-
 
 
     return (
@@ -241,12 +241,15 @@ const BillAddress = () => {
                 >
                     <Box>
                         <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                            <span className="color"><ApartmentIcon /></span><span class="space" />Office
+                            <span className="color"><ApartmentIcon /></span><span class="space1" />Office
                         </Typography>
                         <Box
                             display="flex"
-                            justifyContent="space-around"
-                            gap="300px"
+                            justifyContent="space-between"
+                            flexDirection="row"
+                            gap="350px"
+                            alignItems="center"
+                        // gap="300px"
                         >
                             <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
@@ -255,8 +258,57 @@ const BillAddress = () => {
                                 <br />
                                 USA
                             </Typography>
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" marginTop="15px" color={colors.grey[100]} >
-                                <span className="color"><DeleteIcon /></span>
+                            <Typography variant="h5" color={colors.grey[100]} >
+                                <div className="tick-icon">
+                                    <span><CheckIcon /></span>
+                                </div>
+                            </Typography>
+                            {/* <Box
+                                textAlign="center"
+                                marginTop="40px"
+                            >
+
+                                <div style={{ backgroundColor: '#2499ef', borderRadius: '50%', display: 'inline-block', padding: '3px' }}>
+                                    <CheckIcon style={{ fontSize: '10px' }} />
+                                </div>
+                            </Box> */}
+                        </Box>
+                    </Box >
+                </Box>
+            </Box >
+
+            <Box
+                gridColumn="span 8"
+                gridRow="span 2"
+            >
+                < Box
+                    display="flex"
+                    justifyContent="space-between"
+                    marginBottom="15px"
+                    borderRadius="10px"
+                    padding="15px"
+                    backgroundColor={colors.primary[400]}
+                >
+                    <Box>
+                        <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                            <span className="color"><ApartmentIcon /></span><span class="space1" />Office
+                        </Typography>
+                        <Box
+                            display="flex"
+                            justifyContent="space-around"
+                            gap="350px"
+                        >
+                            <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
+                                Ap #285-7193 Ullamcorper Avenue
+                                <br />
+                                Amesbury HI 93373
+                                <br />
+                                USA
+                            </Typography>
+                            <Typography variant="h5" color={colors.grey[100]} >
+                                <div className="delete-icon">
+                                    <span><DeleteIcon /></span>
+                                </div>
                             </Typography>
                         </Box>
                     </Box >
@@ -278,60 +330,25 @@ const BillAddress = () => {
                 >
                     <Box>
                         <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                            <span className="color"><ApartmentIcon /></span><span class="space" />Office
+                            <span className="color"><ApartmentIcon /></span><span class="space1" />Office
                         </Typography>
                         <Box
                             display="flex"
                             justifyContent="space-around"
-                            gap="300px"
+                            gap="350px"
                         >
                             <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
                                 <br />
                                 Amesbury HI 93373
                                 <br />
+
                                 USA
                             </Typography>
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" marginTop="15px" color={colors.grey[100]} >
-                                <span className="color"><DeleteIcon /></span>
-                            </Typography>
-                        </Box>
-                    </Box >
-                </Box>
-            </Box >
-
-
-
-            <Box
-                gridColumn="span 8"
-                gridRow="span 2"
-            >
-                < Box
-                    display="flex"
-                    justifyContent="space-between"
-                    marginBottom="15px"
-                    borderRadius="10px"
-                    padding="15px"
-                    backgroundColor={colors.primary[400]}
-                >
-                    <Box>
-                        <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                            <span className="color"><ApartmentIcon /></span><span class="space" />Office
-                        </Typography>
-                        <Box
-                            display="flex"
-                            justifyContent="space-around"
-                            gap="300px"
-                        >
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
-                                Ap #285-7193 Ullamcorper Avenue
-                                <br />
-                                Amesbury HI 93373
-                                <br />
-                                USA
-                            </Typography>
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" marginTop="15px" color={colors.grey[100]} >
-                                <span className="color"><DeleteIcon /></span>
+                            <Typography variant="h5" color={colors.grey[100]} >
+                                <div className="delete-icon">
+                                    <span><DeleteIcon /></span>
+                                </div>
                             </Typography>
                         </Box>
                     </Box >
